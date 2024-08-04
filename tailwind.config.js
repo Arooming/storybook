@@ -3,9 +3,13 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {},
+    // css 파일에 정의했다면 꼭 넣어줄 필요는 없지만, 이렇게 설정해두면 어떤 폰트가 어디에 쓰였다 정도는 알 수 있기 때문에 폰트 관리에 용이하긴 함
+    fontFamily: {
+      body: ["Noto Sans KR"],
+    },
     // NotoSans, Roboto, Inter 등의 폰트를 사용한다면 `@fontsource`에서 설치하는게 가장 빠름 + 번들러 크기도 작음
     // `@fontsource`: 다양한 웹 폰트들을 npm 패키지로 해둔 것
-    // 가장 자주 쓰이는 것들 위주로 설정할 것 ! 
+    // 가장 자주 쓰이는 것들 위주로 설정할 것 !
     // 어차피 fontWeight나 lineHeight 같은 것들은 여기서 정의한 걸 override한 후, inline style로 정의한 내용들로 설정됨
     fontSize: {
       xs: [
