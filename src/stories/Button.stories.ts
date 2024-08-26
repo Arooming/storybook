@@ -1,52 +1,51 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
-import { Button } from './Button';
+// 공식문서를 따라하면 에러나는 경우가 좀 있음 ! 차라리 여기 있는 애들을 복사해서 가공하는게 더 나음
+import type { Meta, StoryObj } from "@storybook/react";
+import { fn } from "@storybook/test";
+import { Button } from "../components/Button";
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
+// 버튼 컴포넌트의 메타 정보를 나타내는 부분
 const meta = {
-  title: 'Example/Button',
+  // 이 컴포넌트가 존재하는 경로(수정하면 경로 바뀜)
+  title: "Example/Button",
   component: Button,
   parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: 'centered',
+    layout: "centered",
   },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ['autodocs'],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
+  tags: ["autodocs"],
+  // 응집도를 높이고 한 곳에서 관리하기 위해서 "description"으로 argType 정의하는게 좋음
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: { control: "color", description: "버튼의 배경 컬러 " },
   },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: fn() },
+  // 메타 정보는 버튼이 받는 prop들을 정의함
 } satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
     primary: true,
-    label: 'Button',
+    label: "Button",
   },
 };
 
 export const Secondary: Story = {
   args: {
-    label: 'Button',
+    label: "Button",
   },
 };
 
 export const Large: Story = {
   args: {
-    size: 'large',
-    label: 'Button',
+    size: "large",
+    label: "Button",
   },
 };
 
 export const Small: Story = {
   args: {
-    size: 'small',
-    label: 'Button',
+    size: "small",
+    label: "Button",
   },
 };
