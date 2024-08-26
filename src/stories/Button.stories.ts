@@ -9,6 +9,7 @@ const meta = {
   title: "Example/Button",
   component: Button,
   parameters: {
+    // left, right로 바꿀 경우 버튼의 위치 변경됨
     layout: "centered",
   },
   tags: ["autodocs"],
